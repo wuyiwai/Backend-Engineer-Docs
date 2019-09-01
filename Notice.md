@@ -18,4 +18,8 @@ mkdocs.yml    # The configuration file.
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 ```
-    
+
+##### 写作
+1. 新建md
+2. mkdocs build
+3. mkdocs gh-deploy
