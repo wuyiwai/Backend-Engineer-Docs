@@ -23,3 +23,7 @@ mkdocs.yml    # The configuration file.
 1. 新建md
 2. mkdocs build
 3. mkdocs gh-deploy
+
+##### 其他资料
+1. [mkdocs中文文档](https://markdown-docs-zh.readthedocs.io/zh_CN/latest/)
+2. [mkdocs主题](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
