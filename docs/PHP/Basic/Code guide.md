@@ -1,0 +1,4 @@
+- [PSR](https://psr.phphub.org/)
+- [PHP之道](http://laravel-china.github.io/php-the-right-way/)
+- [PHP最佳实践](https://phpbestpractices.justjavac.com/)
+- [风雪之隅的博客](http://www.laruence.com/)
