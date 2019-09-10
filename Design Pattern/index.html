@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>生活 - 后端学习笔记</title>
+  <title>设计模式 - 后端学习笔记</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u751f\u6d3b";
-    var mkdocs_page_input_path = "life.md";
+    var mkdocs_page_name = "\u8bbe\u8ba1\u6a21\u5f0f";
+    var mkdocs_page_input_path = "Design Pattern.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -58,15 +58,9 @@
     <a class="" href="../resource/">资源</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">生活</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#_1">成长规划</a></li>
-    
-
-    </ul>
+    <a class="" href="../life/">生活</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -212,9 +206,21 @@
     <a class="" href="../Git/">Git</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../Design Pattern/">设计模式</a>
+    <a class="current" href="./">设计模式</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">工厂模式</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">单例模式</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_3">策略模式</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -244,7 +250,7 @@
     
       
     
-    <li>生活</li>
+    <li>设计模式</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -254,11 +260,118 @@
           <div role="main">
             <div class="section">
               
-                <h5 id="_1">成长规划</h5>
+                <blockquote>
+<p>参考阅读
+1. <a href="https://learnku.com/docs/php-design-patterns/2018">PHP 设计模式全集2018</a>
+2. <a href="http://laravel-china.github.io/php-the-right-way/pages/Design-Patterns.html">Laravel China 设计模式</a></p>
+</blockquote>
+<h5 id="_1">工厂模式</h5>
+<pre><code>&lt;?php
+class Automobile
+{
+    private $vehicleMake;
+    private $vehicleModel;
+
+    public function __construct($make, $model)
+    {
+        $this-&gt;vehicleMake = $make;
+        $this-&gt;vehicleModel = $model;
+    }
+
+    public function getMakeAndModel()
+    {
+        return $this-&gt;vehicleMake . ' ' . $this-&gt;vehicleModel;
+    }
+}
+
+class AutomobileFactory
+{
+    public static function create($make, $model)
+    {
+        return new Automobile($make, $model);
+    }
+}
+
+// 用工厂的 create 方法创建 Automobile 对象
+$veyron = AutomobileFactory::create('Bugatti', 'Veyron');
+
+print_r($veyron-&gt;getMakeAndModel()); // outputs &quot;Bugatti Veyron&quot;
+</code></pre>
+
+<h5 id="_2">单例模式</h5>
 <ul>
-<li><a href="http://1ke.co/course/197">PHP程序员的技术成长规划</a></li>
-<li><a href="https://phpbestpractices.justjavac.com/">PHP 最佳实践</a></li>
+<li>暂时不常用 todo</li>
 </ul>
+<h5 id="_3">策略模式</h5>
+<ul>
+<li>个人理解:这种设计有点类似于switch的控制结构,把业务解耦,针对一些角色,种类等可以枚举或者新增不能一起太大变化的业务</li>
+<li>使用策略模式，你可以把一族不同的算法（业务）封装到不同的类中，使 client 类可以在不知道具体实现的情况下选择实例化其中一个算法。策略模式有几种不同的变体，最简单的是下面这种：</li>
+<li>第一段代码展示了一组输出算法，分别具体实现了 <code>OutputInterface</code> 的 <code>load</code> 方法，返回序列化结果，json 和数组：</li>
+</ul>
+<pre><code>&lt;?php
+
+interface OutputInterface
+{
+   public function load();
+}
+
+class SerializedArrayOutput implements OutputInterface
+{
+   public function load()
+   {
+       return serialize($arrayOfData);
+   }
+}
+
+class JsonStringOutput implements OutputInterface
+{
+   public function load()
+   {
+       return json_encode($arrayOfData);
+   }
+}
+
+class ArrayOutput implements OutputInterface
+{
+   public function load()
+   {
+       return $arrayOfData;
+   }
+}
+</code></pre>
+
+<p>通过像上面这样把不同类型的输出算法封装起来，其他的开发者可以很容易地在不影响 client 代码的情况下添加新的输出类型。</p>
+<p>每个具体的输出类实现了 <code>OutputInterface</code> —— 这有两个目的，第一是它提供了一个所有输出类都必须遵守的契约，第二，你将会在本文后面的部分看到，通过实现公共的接口，你可以利用<a href="http://php.net/language.oop5.typehinting">类型约束</a>保证 client 中使用的输出类必须是实现了 <code>OutputInterface</code> 的类。</p>
+<p>接下来的一小段代码展示了一个 client 类如何使用其中一个输出算法，并可以在运行时根据需要选用不同的算法。</p>
+<pre><code>&lt;?php
+class SomeClient
+{
+   private $output;
+
+   public function setOutput(OutputInterface $outputType)
+   {
+       $this-&gt;output = $outputType;
+   }
+
+   public function loadOutput()
+   {
+       return $this-&gt;output-&gt;load();
+   }
+}
+</code></pre>
+
+<p>上面的 <code>client</code>类有一个必须在运行时设置的私有属性，并且是“OutputInterface”类型的。 一旦这个属性被设置为具体的实例（三个输出类中之一的实例），并且 <code>loadOutput</code> 方法被调用，那么它的 <code>load</code> 方法就会被调用，返回回序列化结果或 json 或数组。</p>
+<pre><code>&lt;?php
+$client = new SomeClient();
+
+// Want an array?
+$client-&gt;setOutput(new ArrayOutput());
+$data = $client-&gt;loadOutput();
+
+// Want some JSON?
+$client-&gt;setOutput(new JsonStringOutput());
+$data = $client-&gt;loadOutput();
+</code></pre>
               
             </div>
           </div>
@@ -266,10 +379,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../about/" class="btn btn-neutral float-right" title="关于">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../MQ/" class="btn btn-neutral float-right" title="消息队列">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../resource/" class="btn btn-neutral" title="资源"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Git/" class="btn btn-neutral" title="Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -295,10 +408,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../resource/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Git/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../MQ/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

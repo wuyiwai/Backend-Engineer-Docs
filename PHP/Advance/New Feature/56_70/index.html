@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>5.6->7.0 - 后端学习笔记</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "5.6->7.0";
+    var mkdocs_page_input_path = "PHP/Advance/New Feature/56_70.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> 后端学习笔记</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">主页</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../resource/">资源</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../life/">生活</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../about/">关于</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">PHP</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">基础</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../Basic/Basic/">基础文档</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../Basic/Code guide/">编程指导</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../Basic/Code/">有趣代码</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">进阶</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <span class="caption-text">新特性</span>
+    <ul class="subnav">
+                <li class="toctree-l4 current">
+                    
+    <a class="current" href="./">5.6->7.0</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Frame/">框架对比</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../Tools/Tools/">工具</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">算法</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Array/">数组</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Linked Lists/">链表</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Stack/">堆栈</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Queue/">队列</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Hash table/">哈希表</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Tree/">树</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Graphs/">图</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/Sort/">排序</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">理论</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../Algorithm/Theory/Recursive/">递归</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../Algorithm/Theory/Dynamic planning/">动态规划</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../Algorithm/Theory/Combination/">组合 & 概率</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../Algorithm/Theory/NP/">NP,NP-完全和近似算法</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Algorithm/leetcode/">典题</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">数据库</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../Database/Paradigm/">三大范式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Database/Index/">索引</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../Database/Suggestion/">建议</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Git/">Git</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Design Pattern/">设计模式</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../MQ/">消息队列</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">后端学习笔记</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>新特性 &raquo;</li>
+        
+      
+        
+          <li>进阶 &raquo;</li>
+        
+      
+        
+          <li>PHP &raquo;</li>
+        
+      
+    
+    <li>5.6->7.0</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <blockquote>
+<p>参考: <a href="https://secure.php.net/manual/zh/migration70.new-features.php">从5.6.x移植到7.0.x</a></p>
+</blockquote>
+<ul>
+<li>标量类型声明</li>
+</ul>
+<pre><code> function sumOfInts(int ...$ints) {
+        return array_sum($ints);
+     }
+</code></pre>
+
+<ul>
+<li>返回值类型声明</li>
+</ul>
+<pre><code>function arraysSum(array ...$arrays): array
+ {
+     return array_map(function(array $array): int {
+         return array_sum($array);
+     }, $arrays);
+ }
+</code></pre>
+
+<ul>
+<li>null合并运算符（??），如果变量存在且值不为null，就返回自身值，否则返回第二个操作数</li>
+</ul>
+<pre><code>&lt;?php
+ $username = $_GET['user'] ?? 'nobody';
+ 等价于:
+ $username = isset($_GET['user']) ? $_GET['user'] : 'nobody';
+
+ $username = $_GET['user'] ?? $_POST['user'] ?? 'nobody';
+ ?&gt;
+</code></pre>
+
+<ul>
+<li>太空船操作符（组合比较符）</li>
+</ul>
+<pre><code>&lt;?php
+ // 整数
+ echo 1 &lt;=&gt; 1; // 0
+ echo 1 &lt;=&gt; 2; // -1
+ echo 2 &lt;=&gt; 1; // 1
+
+ // 浮点数
+ echo 1.5 &lt;=&gt; 1.5; // 0
+ echo 1.5 &lt;=&gt; 2.5; // -1
+ echo 2.5 &lt;=&gt; 1.5; // 1
+
+ // 字符串
+ echo &quot;a&quot; &lt;=&gt; &quot;a&quot;; // 0
+ echo &quot;a&quot; &lt;=&gt; &quot;b&quot;; // -1
+ echo &quot;b&quot; &lt;=&gt; &quot;a&quot;; // 1
+ ?&gt;
+</code></pre>
+
+<ul>
+<li>通过define()定义常量数组</li>
+</ul>
+<pre><code>&lt;?php
+ define('ANIMALS', [
+     'dog',
+     'cat',
+     'bird'
+ ]);
+
+ echo ANIMALS[1]; // 输出 &quot;cat&quot;
+ ?&gt;
+</code></pre>
+
+<ol>
+<li>匿名类（用后即焚）</li>
+</ol>
+<pre><code>&lt;?php
+ interface Logger {
+     public function log(string $msg);
+ }
+
+ class Application {
+     private $logger;
+
+     public function getLogger(): Logger {
+          return $this-&gt;logger;
+     }
+
+     public function setLogger(Logger $logger) {
+          $this-&gt;logger = $logger;
+     }
+ }
+
+ $app = new Application;
+ $app-&gt;setLogger(new class implements Logger {
+     public function log(string $msg) {
+         echo $msg;
+     }
+ });
+
+ var_dump($app-&gt;getLogger());
+ ?&gt;
+</code></pre>
+
+<ol>
+<li>Group use declarations</li>
+</ol>
+<pre><code>从同一 namespace 导入的类、函数和常量现在可以通过单个 use 语句 一次性导入了。
+ &lt;?php
+
+ // PHP 7 之前的代码
+ use some\namespace\ClassA;
+ use some\namespace\ClassB;
+ use some\namespace\ClassC as C;
+
+ use function some\namespace\fn_a;
+ use function some\namespace\fn_b;
+ use function some\namespace\fn_c;
+
+ use const some\namespace\ConstA;
+ use const some\namespace\ConstB;
+ use const some\namespace\ConstC;
+
+ // PHP 7+ 及更高版本的代码
+ use some\namespace\{ClassA, ClassB, ClassC as C};
+ use function some\namespace\{fn_a, fn_b, fn_c};
+ use const some\namespace\{ConstA, ConstB, ConstC};
+ ?&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Frame/" class="btn btn-neutral float-right" title="框架对比">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../Basic/Code/" class="btn btn-neutral" title="有趣代码"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../Basic/Code/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../Frame/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

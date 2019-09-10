@@ -55,7 +55,17 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../backend/">后端</a>
+    <a class="" href="../../../resource/">资源</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../life/">生活</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../about/">关于</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -71,11 +81,33 @@
     <a class="current" href="./">基础文档</a>
     <ul class="subnav">
             
+    <li class="toctree-l4"><a href="#_1">参考文档</a></li>
+    
+
+    <li class="toctree-l4"><a href="#_2">数组</a></li>
+    
+
+    <li class="toctree-l4"><a href="#_3">字符串</a></li>
+    
+
+    <li class="toctree-l4"><a href="#_4">类型判断</a></li>
+    
+
+    <li class="toctree-l4"><a href="#_5">匿名函数</a></li>
+    
+
+    <li class="toctree-l4"><a href="#_6">等于判断</a></li>
+    
+
     </ul>
                 </li>
                 <li class="toctree-l3">
                     
     <a class="" href="../Code guide/">编程指导</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../Code/">有趣代码</a>
                 </li>
     </ul>
                 </li>
@@ -85,11 +117,17 @@
     <ul class="subnav">
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Advance/Frame/">框架对比</a>
+    <span class="caption-text">新特性</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../Advance/New Feature/56_70/">5.6->7.0</a>
+                </li>
+    </ul>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../Advance/Frame/">理论</a>
+    <a class="" href="../../Advance/Frame/">框架对比</a>
                 </li>
     </ul>
                 </li>
@@ -167,17 +205,36 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../resource/">资源</a>
+    <span class="caption-text">数据库</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../Database/Paradigm/">三大范式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../Database/Index/">索引</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../Database/Suggestion/">建议</a>
+                </li>
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../life/">生活</a>
+    <a class="" href="../../../Git/">Git</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../about/">关于</a>
+    <a class="" href="../../../Design Pattern/">设计模式</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../MQ/">消息队列</a>
 	    </li>
           
         </ul>
@@ -220,7 +277,72 @@
           <div role="main">
             <div class="section">
               
-                
+                <h5 id="_1">参考文档</h5>
+<ol>
+<li><a href="https://secure.php.net/manual/zh/ref.array.php">数组函数</a></li>
+<li><a href="https://secure.php.net/manual/zh/ref.strings.php">字符串函数</a></li>
+</ol>
+<h5 id="_2">数组</h5>
+<ul>
+<li><a href="https://secure.php.net/manual/zh/function.array-column.php">array_column</a> - 返回数组中指定的一列</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-combine.php">array_combine</a> -创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值 </li>
+<li><a href="https://secure.php.net/manual/zh/function.array-count-values.php">array_count_values</a> - 统计数组中所有的值出现的次数</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-diff.php">array_diff</a> - 计算数组的差集</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-fill-keys.php">array_fiill_keys</a> - 使用指定的键和值填充数组</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-fill.php">array_fill</a> - 用给定的值填充数组</li>
+<li><a href="https://php.net/manual/zh/function.array-filter.php">array_filter</a> - 用回调函数过滤数组中的单元 - <strong>真的会过滤</strong></li>
+<li><a href="https://php.net/manual/zh/function.array-key-exists.php">array_key_exists</a> - 检查数组是否有指定的键名或索引</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-map.php">array_map</a> - 为数组的每个元素应用回调函数</li>
+<li><a href="https://php.net/manual/zh/function.array-merge.php">array_merge</a> - 合并一个或多个数组 - <strong>会重建索引</strong></li>
+<li><a href="https://php.net/manual/zh/function.array-multisort.php">array_multisory</a> - 对多个数组或多维数组进行排序</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-pop.php">array_pop</a> -  弹出数组最后一个单元（出栈）</li>
+<li><a href="https://php.net/manual/zh/function.array-push.php">array_push</a> - 将一个或多个单元压入数组的末尾</li>
+<li><a href="https://php.net/manual/zh/function.array-shift.php">array_shift</a> - 将数组开头的单元移出数组</li>
+<li><a href="https://php.net/manual/zh/function.array-unshift.php">array_unshift</a> - 在数组开头插入一个或多个单元</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-values.php">array_values</a> - 返回数组中所有的值并重新建立数字索引</li>
+<li><a href="https://secure.php.net/manual/zh/function.in-array.php">in_array</a> - 检查数组中是否存在某个值</li>
+<li><a href="https://secure.php.net/manual/zh/function.list.php">list</a> - 把数组中的值赋给一组变量</li>
+<li><a href="https://secure.php.net/manual/zh/function.array-reduce.php">array_reduce</a> - 用回调函数迭代地将数组简化为单一的值 - 可以用来做一些迭代操作.比如对一个数组的每一项做一些操作.跟foreach有点像</li>
+</ul>
+<h5 id="_3">字符串</h5>
+<ul>
+<li><a href="https://secure.php.net/manual/zh/function.explode.php">explode</a> - 使用一个字符串分割另一个字符串</li>
+<li><a href="https://secure.php.net/manual/zh/function.implode.php">implode</a> - 将一个一维数组的值转化为字符串</li>
+<li><a href="https://secure.php.net/manual/zh/function.money-format.php">money_format</a> - 将数字格式化成货币字符串 - <strong>很有意思</strong></li>
+<li><a href="https://secure.php.net/manual/zh/function.parse-str.php">parse_str</a> - 将字符串解析成多个变量</li>
+<li><a href="https://secure.php.net/manual/zh/function.str-repeat.php">str_repeat</a> - 重复一个字符串</li>
+<li><a href="https://secure.php.net/manual/zh/function.strrev.php">strrev </a> - 反转字符串</li>
+<li><a href="https://secure.php.net/manual/zh/function.strpos.php">strpos</a> - 查找字符串首次出现的位置</li>
+</ul>
+<h5 id="_4">类型判断</h5>
+<ul>
+<li><a href="https://www.php.net/manual/zh/function.is-numeric.php">is_numeric</a> -检测变量是否为数字或数字字符串 -- eg:array_filter(array, 'is_numeric')</li>
+</ul>
+<h5 id="_5">匿名函数</h5>
+<ul>
+<li>匿名函数（Anonymous functions），也叫闭包函数（<em>closures</em>），允许 临时创建一个没有指定名称的函数。最经常用作回调函数（<a href="https://php.net/manual/zh/language.pseudo-types.php#language.types.callback">callback</a>）参数的值。当然，也有其它应用的情况。</li>
+<li>匿名函数目前是通过 <a href="https://php.net/manual/zh/class.closure.php">Closure</a> 类来实现的。</li>
+<li>闭包可以从父作用域中继承变量。 任何此类变量都应该用 <em>use</em> 语言结构传递进去。 <strong>PHP 7.1 起，不能传入此类变量： <a href="https://php.net/manual/zh/language.variables.predefined.php">superglobals</a>、 $this 或者和参数重名。</strong></li>
+</ul>
+<h5 id="_6">等于判断</h5>
+<pre><code>$a = 0;
+$b = null;
+$c = '';
+$arr_one = [];
+$arr_two = [''];
+$arra_three = ['', 1];
+
+echo 0 == null; // 1
+echo 0 == false; //1
+echo false == null; //1
+
+if (0) echo &quot;1&quot;;  // 无输出
+if (null) echo &quot;2&quot;;  // 无输出
+if (false) echo &quot;3&quot;;  // 无输出
+if ([]) echo &quot;4&quot;;  // 无输出
+if ('') echo &quot;5&quot;;  // 无输出
+if (['']) echo '6'; //6
+</code></pre>
               
             </div>
           </div>
@@ -231,7 +353,7 @@
         <a href="../Code guide/" class="btn btn-neutral float-right" title="编程指导">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../../backend/" class="btn btn-neutral" title="后端"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../about/" class="btn btn-neutral" title="关于"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -257,7 +379,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../../backend/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../Code guide/" style="color: #fcfcfc">Next &raquo;</a></span>
